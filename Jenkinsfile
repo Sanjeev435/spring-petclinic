@@ -1,7 +1,7 @@
 #!groovy
 
 pipeline {
-  agent none
+  agent any
   stages {
     stage('Maven Install') {
       steps {
@@ -9,7 +9,6 @@ pipeline {
       }
     }
     stage('Run tests') {
-      agent any
       steps {
         bat "mvn test"
       }
